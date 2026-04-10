@@ -419,7 +419,7 @@ export function resolveWebSearchApiKey(providerId: string, clientKey?: string): 
   if (clientKey) return clientKey;
   const serverKey = getConfig().webSearch[providerId]?.apiKey;
   if (serverKey) return serverKey;
-  
+
   if (providerId === 'claude') return process.env.ANTHROPIC_API_KEY || '';
   if (providerId === 'tavily') return process.env.TAVILY_API_KEY || '';
   return '';

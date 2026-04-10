@@ -12,7 +12,7 @@ const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 
 /**
  * Search the web using Claude's built-in web search tool.
- * Note: The API automatically executes searches server-side and synthesizes 
+ * Note: The API automatically executes searches server-side and synthesizes
  * an answer. We parse the message response to extract both.
  */
 export async function searchWithClaude(params: {
@@ -88,7 +88,7 @@ export async function searchWithClaude(params: {
                 title: result.title || 'Untitled',
                 url: url,
                 // Claude encrypts raw content snippets for security, so we extract cited text if available
-                content: result.cited_text || '', 
+                content: result.cited_text || '',
                 score: 1, // Claude doesn't provide relevance scores
               });
             }
